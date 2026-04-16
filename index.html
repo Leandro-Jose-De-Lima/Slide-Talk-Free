@@ -134,6 +134,18 @@
         .info-box:hover { transform: scale(1.02); }
         .info-box h4 { font-size: 20px; margin-bottom: 10px; color: #1e293b; }
 
+        /* Ajustes do Slide 3 (Persona) para manter proporcao no quadro 16:9 */
+        .slide-persona .slide-title { margin-bottom: 24px; }
+        .slide-persona .two-column { gap: 36px; align-items: start; }
+        .slide-persona .persona-img { height: 400px; }
+        .slide-persona .persona-details h3 { font-size: 32px; margin-bottom: 2px; }
+        .slide-persona .persona-details .demographic { font-size: 16px; margin-bottom: 12px; }
+        .slide-persona .persona-details > p { margin-bottom: 12px !important; font-size: 14px !important; line-height: 1.45; }
+        .slide-persona .info-box { padding: 12px 14px; margin-bottom: 10px; border-radius: 14px; }
+        .slide-persona .info-box h4 { font-size: 18px; margin-bottom: 8px; }
+        .slide-persona .info-box ul { font-size: 14px; line-height: 1.35 !important; }
+        .slide-persona .info-box li { margin-bottom: 4px; }
+
         /* Diagrama */
         .diagram-container { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: 20px; padding: 20px 0; gap: 10px; }
         .diagram-node { background: #ffffff; border: 2px solid #3b82f6; border-radius: 16px; padding: 20px 15px; text-align: center; flex: 1; position: relative; box-shadow: 0 10px 20px rgba(37, 99, 235, 0.1); z-index: 2; transition: transform 0.3s ease; }
@@ -342,7 +354,7 @@
         </div>
 
         <!-- Slide 3: Persona -->
-        <div class="slide-container">
+        <div class="slide-container slide-persona">
             <h2 class="slide-title">Nossa Persona</h2>
             <div class="content-area">
                 <div class="two-column">
