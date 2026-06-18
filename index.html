@@ -145,13 +145,37 @@
         .slide-persona .info-box h4 { font-size: 18px; margin-bottom: 8px; }
         .slide-persona .info-box ul { font-size: 14px; line-height: 1.35 !important; }
         .slide-persona .info-box li { margin-bottom: 4px; }
+        .slide-persona .persona-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .slide-persona .persona-card { background: #ffffff; border: 1px solid #dbeafe; border-radius: 18px; padding: 18px; box-shadow: 0 10px 22px rgba(37, 99, 235, 0.08); }
+        .slide-persona .persona-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .slide-persona .persona-avatar {
+            min-height: 56px;
+            padding: 8px 14px;
+            border-radius: 18px;
+            background: #eff6ff;
+            color: #1d4ed8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            border: 1px solid #bfdbfe;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+        .slide-persona .persona-card h3 { font-size: 30px; margin: 0; }
+        .slide-persona .persona-card .demographic { margin: 0; }
+        .slide-persona .persona-quote { margin-bottom: 12px; font-size: 14px; color: #64748b; font-style: italic; border-left: 3px solid #bfdbfe; padding-left: 10px; }
+        .slide-persona .persona-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+        .slide-persona .persona-pill { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 999px; padding: 5px 10px; font-size: 12px; font-weight: 700; }
+        .slide-persona .persona-note { margin-bottom: 12px; font-size: 14px; color: #475569; line-height: 1.45; }
 
         /* Diagrama */
         .diagram-container { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: 20px; padding: 20px 0; gap: 10px; }
         .diagram-node { background: #ffffff; border: 2px solid #3b82f6; border-radius: 16px; padding: 20px 15px; text-align: center; flex: 1; position: relative; box-shadow: 0 10px 20px rgba(37, 99, 235, 0.1); z-index: 2; transition: transform 0.3s ease; }
         .diagram-node:hover { transform: translateY(-5px) scale(1.05); border-color: #2563eb; }
         .diagram-node::before { content: ''; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #dbeafe; color: #1e3a8a; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; border: 1px solid #bfdbfe; white-space: nowrap; }
-        .node-1::before { content: '1. Entrada'; } .node-2::before { content: '2. Processamento'; } .node-3::before { content: '3. Tradução AI'; } .node-4::before { content: '4. Resposta'; } .node-5::before { content: '5. Interação'; }
+        .node-1::before { content: '1. Configuração'; } .node-2::before { content: '2. Entrada'; } .node-3::before { content: '3. Processamento'; } .node-4::before { content: '4. Tradução AI'; } .node-5::before { content: '5. Renderização'; } .node-6::before { content: '6. Validação'; }
         .diagram-icon { font-size: 30px; color: #2563eb; margin-bottom: 15px; }
         .diagram-node h4 { font-size: 17px; margin-bottom: 10px; color: #1e3a8a; }
         .diagram-node p { font-size: 13px; color: #64748b; line-height: 1.4; }
@@ -355,37 +379,73 @@
 
         <!-- Slide 3: Persona -->
         <div class="slide-container slide-persona">
-            <h2 class="slide-title">Nossa Persona</h2>
+            <h2 class="slide-title">Personas</h2>
             <div class="content-area">
-                <div class="two-column">
-                    <div>
-                        <img src="file1.jpeg" alt="Foto da Persona" class="persona-img">
-                    </div>
-                    <div class="persona-details">
-                        <h3>Andre</h3>
-                        <p class="demographic">Diretor Institucional • Recife, PE</p>
+                <div class="persona-grid">
+                    <div class="persona-card">
+                        <div class="persona-header">
+                            <div class="persona-avatar"><i class="fa-solid fa-user-group"></i></div>
+                            <div>
+                                <h3>Juliana Alves</h3>
+                                <p class="demographic">Mae de um filho surdo • Recife, PE</p>
+                            </div>
+                        </div>
 
-                        <p style="margin-bottom: 20px; font-size: 16px; color: #64748b; font-style: italic; border-left: 3px solid #cbd5e1; padding-left: 12px;">
-                            "O aplicativo e otimo e muito util para a sociedade como um todo. O que pode melhorar ainda mais e a integracao de girias e expressoes regionais. O aplicativo ja esta otimo, mas ao entender as particularidades de cada regiao, o TalkingFree vai entregar uma comunicacao 100% humana."
-                        </p>
+                        <p class="persona-quote">"No dia a dia, eu travo em conversas simples com meu filho e em atendimentos fora de casa. Sem ajuda, fica dificil entender e ser entendida com seguranca. Esse aplicativo pode me dar autonomia para me comunicar melhor e apoiar meu filho em qualquer situacao."</p>
+
+                        <div class="persona-meta">
+                            <span class="persona-pill">34 anos</span>
+                            <span class="persona-pill">Quer mais autonomia</span>
+                            <span class="persona-pill">Precisa conversar com escola e servicos</span>
+                        </div>
+
+                        <p class="persona-note">Ela usa o aplicativo para reduzir a dependencia de terceiros, entender respostas em tempo real e conseguir se comunicar com mais naturalidade na rotina da familia.</p>
 
                         <div class="info-box">
-                            <h4><i class="fa-solid fa-heart-crack" style="color: #ef4444; margin-right: 10px;"></i> Dores & Frustrações</h4>
+                            <h4><i class="fa-solid fa-heart-crack" style="color: #ef4444; margin-right: 10px;"></i> Dores</h4>
                             <ul style="margin: 0; padding-left: 20px; color: #475569; line-height: 1.5;">
-                                <li>Perda de identidade cultural: sente que sua expressividade e limitada, pois ferramentas genericas nao compreendem girias, expressoes locais e variacoes regionais da lingua de sinais.</li>
-                                <li>Barreiras no ambiente de trabalho: enfrenta gargalos na comunicacao rapida em reunioes com clientes ouvintes e no recebimento de feedbacks urgentes.</li>
-                                <li>Inseguranca em emergencias: sente ansiedade em situacoes atipicas, como consultas medicas urgentes ou imprevistos na rua, sem tempo para acionar interprete humano.</li>
-                                <li>Atrasos na comunicacao: frustra-se com aplicativos de alta latencia, que quebram o ritmo natural da conversa.</li>
+                                <li>Tem dificuldade para se comunicar com o filho em momentos fora de casa e em atendimentos rapidos.</li>
+                                <li>Sente inseguranca quando precisa explicar necessidades da familia sem um apoio de traducao.</li>
+                                <li>Depende da boa vontade de outras pessoas quando a conversa envolve sinais ou linguagem simples.</li>
                             </ul>
                         </div>
-                        
+
                         <div class="info-box">
-                            <h4><i class="fa-solid fa-star" style="color: #f59e0b; margin-right: 10px;"></i> Objetivos & Necessidades</h4>
+                            <h4><i class="fa-solid fa-star" style="color: #f59e0b; margin-right: 10px;"></i> Necessidades</h4>
                             <ul style="margin: 0; padding-left: 20px; color: #475569; line-height: 1.5;">
-                                <li>Comunicacao natural e regionalizada: precisa que avatar e reconhecimento entendam e reproduzam girias e expressoes regionais de Sao Paulo e de outras regioes.</li>
-                                <li>Traducao simultanea real (baixa latencia): deseja respostas rapidas o suficiente para conversas dinamicas, sem atrasos perceptiveis.</li>
-                                <li>Integracao profissional: busca uma ferramenta que fique aberta no computador ou celular durante o trabalho para facilitar networking e prospeccao.</li>
-                                <li>Expressividade facial e corporal no avatar: precisa que o avatar 3D traduza emocao com expressoes faciais, essenciais na lingua de sinais.</li>
+                                <li>Traducao simples e rapida para conversar melhor com o filho surdo em qualquer lugar.</li>
+                                <li>Apoio visual e pratico para reduzir a dependencia de terceiros.</li>
+                                <li>Mais autonomia e seguranca para lidar com escola, servicos e rotina familiar.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="persona-card">
+                        <div class="persona-header">
+                            <div class="persona-avatar">Carla Nunes</div>
+                            <div>
+                                <h3>Carla Nunes</h3>
+                                <p class="demographic">Gestora de atendimento • Publico Empresa</p>
+                            </div>
+                        </div>
+
+                        <p class="persona-quote">"Precisamos de uma solucao que nossa equipe use todos os dias para atender clientes surdos com agilidade, padrao e conformidade."</p>
+
+                        <div class="info-box">
+                            <h4><i class="fa-solid fa-heart-crack" style="color: #ef4444; margin-right: 10px;"></i> Dores</h4>
+                            <ul style="margin: 0; padding-left: 20px; color: #475569; line-height: 1.5;">
+                                <li>Dependencia de interpretes humanos para interacoes de rotina.</li>
+                                <li>Risco de atendimento inconsistente entre equipes e filiais.</li>
+                                <li>Dificuldade para medir qualidade e tempo de resposta na traducao.</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h4><i class="fa-solid fa-star" style="color: #f59e0b; margin-right: 10px;"></i> Necessidades</h4>
+                            <ul style="margin: 0; padding-left: 20px; color: #475569; line-height: 1.5;">
+                                <li>Uso diario simples para equipes de loja, recepcao, suporte e call center.</li>
+                                <li>Baixa latencia, seguranca de dados e aderencia a LGPD.</li>
+                                <li>Integracao com canais corporativos para escalar atendimento inclusivo.</li>
                             </ul>
                         </div>
                     </div>
@@ -397,46 +457,65 @@
         <div class="slide-container">
             <h2 class="slide-title">Diagrama: Tradução Bidirecional</h2>
             <div class="content-area">
-                <p style="font-size: 18px; text-align: center; margin-bottom: 20px;">O fluxo automatizado de como o sistema quebra a barreira da comunicação instantaneamente, sem humanos.</p>
+                <p style="font-size: 18px; text-align: center; margin-bottom: 20px;">O fluxo automatizado mostra como o sistema quebra a barreira da comunicação, da configuração inicial ao retorno final, sem depender de humanos.</p>
                 
                 <div class="diagram-container">
                     <div class="diagram-node node-1">
-                        <div class="diagram-icon"><i class="fa-solid fa-keyboard"></i></div>
-                        <h4>Entrada de Dados</h4>
-                        <p>Ouvinte digita ou fala.<br><strong>OU</strong><br>Surdo grava um vídeo fazendo sinais.</p>
+                        <div class="diagram-icon"><i class="fa-solid fa-sliders"></i></div>
+                        <h4>1. Configuração</h4>
+                        <p>Usuário escolhe idioma, tipo de tradução e ativa câmera ou microfone.</p>
                     </div>
                     
                     <div class="diagram-arrow"><i class="fa-solid fa-chevron-right"></i></div>
                     
                     <div class="diagram-node node-2">
+                        <div class="diagram-icon"><i class="fa-solid fa-keyboard"></i></div>
+                        <h4>2. Entrada de Dados</h4>
+                        <p>Ouvinte digita ou fala.<br><strong>OU</strong><br>Surdo grava um vídeo fazendo sinais.</p>
+                    </div>
+
+                    <div class="diagram-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+
+                    <div class="diagram-node node-3">
                         <div class="diagram-icon"><i class="fa-solid fa-microchip"></i></div>
-                        <h4>Processamento</h4>
+                        <h4>3. Processamento</h4>
                         <p>IA processa o texto/voz ou reconhece e decodifica os movimentos via Visão Computacional.</p>
                     </div>
                     
                     <div class="diagram-arrow"><i class="fa-solid fa-chevron-right"></i></div>
                     
-                    <div class="diagram-node node-3">
+                    <div class="diagram-node node-4">
                         <div class="diagram-icon"><i class="fa-solid fa-language"></i></div>
-                        <h4>Tradução (IA)</h4>
+                        <h4>4. Tradução (IA)</h4>
                         <p>O motor converte para a linguagem de sinais desejada ou para formato texto/áudio.</p>
                     </div>
                     
                     <div class="diagram-arrow"><i class="fa-solid fa-chevron-right"></i></div>
                     
-                    <div class="diagram-node node-4">
+                    <div class="diagram-node node-5">
                         <div class="diagram-icon"><i class="fa-solid fa-user-astronaut"></i></div>
-                        <h4>Renderização</h4>
+                        <h4>5. Renderização</h4>
                         <p>O Avatar 3D realiza os sinais na tela.<br><strong>OU</strong><br>O app emite o texto/áudio lido.</p>
                     </div>
 
                     <div class="diagram-arrow"><i class="fa-solid fa-chevron-right"></i></div>
                     
-                    <div class="diagram-node node-5">
+                    <div class="diagram-node node-6">
                         <div class="diagram-icon"><i class="fa-solid fa-handshake"></i></div>
-                        <h4>Compreensão</h4>
-                        <p>Diálogo fluido alcançado, 100% automatizado, com zero dependência de intérpretes humanos.</p>
+                        <h4>6. Validação</h4>
+                        <p>O usuário confirma se entendeu, repete se precisar e mantém o diálogo fluindo.</p>
                     </div>
+                </div>
+                <p style="font-size: 15px; text-align: center; margin-top: 18px; color: #64748b;">Se quiser, ainda dá para acrescentar uma etapa de aprendizado de preferências do usuário e histórico de traduções.</p>
+                <div class="info-box" style="margin-top: 18px; padding: 14px 18px;">
+                    <h4 style="margin-bottom: 8px;"><i class="fa-solid fa-circle-plus" style="color: #2563eb; margin-right: 8px;"></i> O que ainda vale acrescentar</h4>
+                    <ul style="margin: 0; padding-left: 20px; color: #475569; line-height: 1.5;">
+                        <li>Seleção de idioma e variante da linguagem de sinais.</li>
+                        <li>Confirmação ou correção da tradução antes de enviar.</li>
+                        <li>Feedback do usuário para melhorar a resposta do sistema.</li>
+                        <li>Histórico de conversas e preferências salvas.</li>
+                        <li>Modo de acessibilidade com contraste alto e legendas.</li>
+                    </ul>
                 </div>
             </div>
         </div>
